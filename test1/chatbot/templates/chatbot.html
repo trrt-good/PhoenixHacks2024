@@ -1,0 +1,20 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+</head>
+<body>
+    <h2>Teachmax Chatbot</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if system_text %}
+        <h2>Teachmax AI Response:</h2>
+        <textarea rows="10" cols="50" readonly>{{ system_text }}</textarea>
+        {% endif %}
+        <label for="id_title1">
+           <br> What's your Question?</label>
+        <p>{{ form.text1 }}</p>
+    </form>
+</body>
+</html>

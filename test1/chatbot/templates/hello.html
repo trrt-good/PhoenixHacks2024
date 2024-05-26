@@ -1,0 +1,121 @@
+<!-- home/templates/home/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Box and Buttons</title>
+    <style>
+        @font-face {
+            font-family: 'NewFont';
+            src: url("{% static 'Typo_Round_Regular_Demo.otf' %}") format("opentype");
+        }
+
+        @font-face {
+            font-family: 'NewFont';
+            font-weight: bold;
+            src: url("{% static 'Typo_Round_Bold_Demo.otf' %}") format("opentype");
+        }
+
+        body {
+            background-color: hsl(50, 40%, 88%);
+            margin: 0;
+            padding: 0;
+            font-family: 'NewFont';
+        }
+
+        h1 p {
+            font-family: NewFont;
+            font-size: 70px;
+            color: #d2daff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .text-box {
+            border: null;
+            padding: 20px;
+            background-color: null;
+            width: 300px;
+            margin: -20px auto;
+            text-align: center;
+        }
+
+        .text-box-group {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container holding the image and the text */
+        .container {
+            position: relative;
+        }
+
+        /* Bottom right text */
+        .text-block {
+            position: absolute;
+            bottom: 300px;
+            right: 100px;
+            background-color: null;
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* Navbar container */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial;
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* The dropdown container */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* Dropdown button */
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            color: black;
+     

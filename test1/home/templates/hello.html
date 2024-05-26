@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Box and Buttons</title>
+    <style>
+        @font-face {
+            font-family: 'NewFont';
+            src: url("Teachmax/templates/Typo_Round_Regular_Demo.otf") format("opentype");
+        }
+
+        @font-face {
+            font-family: 'NewFont';
+            font-weight: bold;
+            src: url("Teachmax/templates/Typo_Round_Bold_Demo.otf") format("opentype");
+        }
+        body {
+            background-color: hsl(50, 40%, 88%);
+            margin: 0;
+            padding: 0;
+            font-family: 'NewFont';
+        }
+        h1 p {
+            font-family: NewFont;
+            font-size: 70px;
+            color: #d2daff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .text-box {
+            border: null;
+            padding: 20px;
+            background-color: null;
+            width: 300px;
+            margin: -20px auto;
+            text-align: center;
+            
+        }
+        .text-box-group {
+            display: flex;
+            justify-content: center;
+        }
+        /* Container holding the image and the text */
+        .container {
+        position: relative;
+        }
+
+        /* Bottom right text */
+        .text-block {
+        position: absolute;
+        bottom: 300px;
+        right: 100px;
+        background-color: null;
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        }
+
+        /* Navbar container */
+        .navbar {
+        overflow: hidden;
+        background-color: #333;
+        font-family: Arial;
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        /* The dropdown container */
+        .dropdown {
+        float: left;
+        overflow: hidden;
+        }
+
+        /* Dropdown button */
+        .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit; 
+        margin: 0;
+        }
+
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: red;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+        background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+
+        .text-block {
+            position: relative;
+            top: -450px; /* Adjust this value as needed */
+            left: 100px;
+        } 
+        .button {
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #04AA6D;
+        }
+
+        .button1:hover {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+
+        .button2:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+    </style>
+</head>
+<header>
+    <h1><p style="margin-left: -80%; font-size: 40px; color: rgb(42, 27, 10);">Teachmax</p></h1>
+</header>
+<body>
+
+    <div class="text-box-group">
+        <div class="container">
+        <div style="margin-left:-100px">
+            <img src="green.png" alt="Norway" style="width:130%;">
+            <div class="text-block">
+              <h1 style="color:black">Instantly Make Variations</h1>
+              <h1 style="color:black">of your tests</h1>
+              <p style="color:black">Text Upload</p>
+              <label for="testVariationFile">Select a file:</label>
+                <input type="file" id="testVariationFile" name="testVariationFile">
+                <div class="navbar">
+                    <div class="dropdown">
+                      <button class="dropbtn">Dropdown
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="#">2 variations</a>
+                        <a href="#">3 variations</a>
+                        <a href="#">4 variations</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        </div>
+        <div class="container">
+        <div style="margin-left: 50px">
+            <img src="pink.png" alt="Norway" style="width:130%;">
+            <div class="text-block">
+                <h1 style="color:black">High-Throughput Autonomous</h1>
+                <h1 style="color:black">Rubric Grading</h1>
+                <p style="color:black">Text Upload</p>
+                <label for="rubricFile"><br>Select a file:</br></label>
+                <input type="file" id="rubricFile" name="rubricFile">
+                <label for="testFile"><br>Select a file:</br></label>
+                <input type="file" id="testFile" name="testFile">
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="text-box">
+        <div style="margin-left:-200px; margin-top: -200px; margin-right:150px;">
+            <img src="yellow.png" alt="Norway" style="width:150%;">
+            <div class="text-block">
+                <h1>Create Interactive AI-Powered Lesson Plans</h1>
+                <p>Syllabus Upload</p>
+                <label for="syllabusFile">Select a file:</label>
+                <input type="file" id="syllabusFile" name="syllabusFile">
+                <p>Lesson Plan Upload</p>
+                <label for="lessonPlanFile">Select a file:</label>
+                <input type="file" id="lessonPlanFile" name="lessonPlanFile">
+            </div>
+        </div>
+    </div>
+
+    <button class="button button1" onclick="document.location='default.asp'" style="position: relative; top: -1100px; left:200px;">Create Test Variations</button>
+    <button class="button button2" onclick="document.location='default.asp'" style="position: relative; top: -450px; left:350px;">Lesson Plan and Syllabus Explainer</button>
+    <button class="button button2" onclick="document.location='default.asp'" style="position: relative; top: -1100px; left:400px;">Grading based on Rubric</button>
+</body>
+</html>
