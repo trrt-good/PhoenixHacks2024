@@ -1,5 +1,7 @@
 from PyPDF2 import PdfReader 
 from groq import Groq
+from IPython.display import display
+import pandas as pd
 
 class Grade:
     def __init__(self, submission):
@@ -22,11 +24,12 @@ class Grade:
 
         At the end, provide a summary in this format using integers:
         **SUMMARY**
+        Name: Last Name, First Name
         Communication: 
         Purposeful Evidence Selection: 
         Analysis: 
         Claims/Assertions: 
-        Flagged (1 for True, 0 for False): 
+        Flagged: 0 or 1
         Total Score: 
 
         Rubric:
@@ -101,9 +104,28 @@ class Grade:
             if bool:
                 if ':' in line:
                     key, value = line.split(':', 1)
-                    parsed_dict[key.strip()] = int(value.strip())
+                    if value.isdigit():
+                        parsed_dict[key.strip()] = int(value.strip())
+                    else:
+                        parsed_dict[key.strip()] = value.strip()
             if "Summary:" in line:
                 bool = True
 
         return parsed_dict
 
+    
+
+obj1 = Grade("tylergradp.pdf")
+obj2 = Grade("charlottegradp.pdf")
+df = None
+
+list = [obj1, obj2]
+
+for obj in list:
+    df2 = pd.DataFrame([obj.parseDict()])
+    df2.set_index('Name', inplace=True)
+    df = pd.concat([df,df2])
+
+
+# # Save to Excel File
+df.to_excel('output.xlsx')
