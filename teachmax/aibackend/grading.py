@@ -22,8 +22,8 @@ class Grade:
         Using the rubric, output a score for each category in the rubric, the score out of the total with all categories added up, and provide justification for each evaluation.
         Should a student's submission reveal that that student needs additional support, please flag that student. 
 
-        At the end, provide a summary in this format using integers:
-        **SUMMARY**
+        At the end, provide a summary in this exact format using integers:
+        **Summary:**
         Name: Last Name, First Name
         Communication: 
         Purposeful Evidence Selection: 
@@ -116,10 +116,10 @@ class Grade:
     
 
 obj1 = Grade("tylergradp.pdf")
-obj2 = Grade("charlottegradp.pdf")
+obj2 = Grade("jeremygradp.pdf")
+obj3 = Grade("charlottegradp.pdf")
 df = None
-
-list = [obj1, obj2]
+list = [obj1, obj2, obj3]
 
 for obj in list:
     df2 = pd.DataFrame([obj.parseDict()])
