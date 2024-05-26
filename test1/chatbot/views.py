@@ -59,7 +59,7 @@ def upload_file(request):
 
             sendInfo()
 
-            return HttpResponseRedirect('/myapp/chatbot')
+            return HttpResponseRedirect('/chatbot/chat')
     else:
         form = UploadFileForm()
         
