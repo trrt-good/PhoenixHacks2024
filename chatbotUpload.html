@@ -1,0 +1,32 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+</head>
+<body>
+    <h2>Upload Materials for Teachmax Chatbot</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_title1">Teacher Name:</label>
+        <p>{{ form.title4 }}</p>
+        <p>{{ form.file4 }}</p>
+        <label for="id_title1">Class Name:</label>
+        <p>{{ form.title5 }}</p>
+        <p>{{ form.file5 }}</p>
+        <label for="id_title1">Subject:</label>
+        <p>{{ form.title6 }}</p>
+        <p>{{ form.file6 }}</p>
+        <label for="id_title1">Syllabus:</label>
+        <p>{{ form.title1 }}</p>
+        <p>{{ form.file1 }}</p>
+        <label for="id_title2">Lesson Plans:</label>
+        <p>{{ form.title2 }}</p>
+        <p>{{ form.file2 }}</p>
+        <label for="id_title2">Class Schedule:</label>
+        <p>{{ form.title2 }}</p>
+        <p>{{ form.file3 }}</p>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

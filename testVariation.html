@@ -1,0 +1,38 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+<head>
+    <title>File Upload</title>
+</head>
+<body>
+    <h2>Upload Sample Test for Teachmax Test Generator</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="id_title1">Test:</label>
+        <p>{{ form.title1 }}</p>
+        <p>{{ form.file1 }}</p>
+        <button type="submit">Upload</button>
+        {% if text %}
+        <h2>Teachmax Generated Test:</h2>
+        <textarea rows="50" cols="100" readonly>{{ text }}</textarea>
+        {% endif %}
+    </form>
+</body>
+</html>
